@@ -37,9 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
     expenseList.innerHTML = "";
     expenses.forEach((expense) => {
       const li = document.createElement("li");
+      li.className = `
+         flex justify-between items-center 
+         bg-white/10 border border-white/20 
+         px-4 py-2 rounded-lg backdrop-blur-md 
+         hover:bg-white/20 transition-all duration-200
+         `;
       li.innerHTML = `
          <span>${expense.name} - $${expense.amount}</span>
-         <button data-id="${expense.id}">
+         <button data-id="${expense.id}" 
+         class="bg-red-500/80 hover:bg-red-600 text-white px-3 py-1 rounded-lg text-sm transition-all">
          Delete </button>
          `;
 
